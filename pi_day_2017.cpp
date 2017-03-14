@@ -22,11 +22,13 @@
 
 #include <cstdint>
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <random>
+
 // Use a Monte Carlo method to calculate pi.  pi = (4 * points in circle)/count of points
 int main( int, char** ) {
-	intmax_t const radius = 1.0;
+	float const radius = 1.0;
 	size_t const num_values = 1'000'000'000;
 	std::random_device rd;     // only used once to initialise (seed) engine
 	std::mt19937 rng{ rd( ) };    // random-number engine used (Mersenne-Twister in this case)
@@ -45,7 +47,7 @@ int main( int, char** ) {
 		}
 	}
 	std::cout << "With a radius of " << radius << " and a sample size of " << num_values << '\n';
-	std::cout << "Estimate = " << (4.0*static_cast<double>(in_circle))/static_cast<double>(count) << '\n';
+	std::cout << "Estimate = " << std::setprecision( 10 ) << (4.0*static_cast<double>(in_circle))/static_cast<double>(count) << '\n';
 	return EXIT_SUCCESS;
 }
 
