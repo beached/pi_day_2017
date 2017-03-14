@@ -29,7 +29,7 @@
 // Use a Monte Carlo method to calculate pi.  pi = (4 * points in circle)/count of points
 int main( int, char** ) {
 	float const radius = 1.0;
-	size_t const num_values = 1'000'000'000;
+	size_t const num_values = 5'000'000'000;
 	std::random_device rd;     // only used once to initialise (seed) engine
 	std::mt19937 rng{ rd( ) };    // random-number engine used (Mersenne-Twister in this case)
 	std::uniform_real_distribution<float> uni{ 0, radius }; // guaranteed unbiased
