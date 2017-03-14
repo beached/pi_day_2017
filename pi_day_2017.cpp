@@ -24,7 +24,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <random>
-
+// Use a Monte Carlo method to calculate pi.  pi = (4 * points in circle)/count of points
 int main( int, char** ) {
 	intmax_t const radius = 10000;
 	size_t const num_values = 1'000'000;
